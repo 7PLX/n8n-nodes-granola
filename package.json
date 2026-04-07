@@ -1,0 +1,57 @@
+{
+    "name": "@7plx/n8n-nodes-granola",
+    "version": "0.0.0",
+    "description": "n8n community node for the Granola API",
+    "license": "MIT",
+    "homepage": "https://github.com/7PLX/n8n-nodes-granola",
+    "keywords": [
+        "n8n-community-node-package",
+        "n8n",
+        "granola",
+        "meeting-notes",
+        "transcription"
+    ],
+    "author": {
+        "name": "Sam Green",
+        "email": "sam.green81@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/7PLX/n8n-nodes-granola.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+   "scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "strict": true,
+        "credentials": [
+            "dist/credentials/GranolaApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/Granola/Granola.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@n8n/node-cli": "*",
+        "eslint": "9.32.0",
+        "prettier": "3.6.2",
+        "release-it": "^19.0.4",
+        "typescript": "6.0.2"
+    },
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    }
+}
